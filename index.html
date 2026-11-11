@@ -319,6 +319,45 @@ tr.full u.k{text-decoration:underline;text-decoration-color:var(--bad);text-deco
 .uchips{display:flex;flex-wrap:wrap;gap:8px}
 .uchips span{font-family:var(--f-ui);font-size:16px;font-weight:500;background:#fff;border-radius:999px;padding:6px 14px}
 .uhow{margin-top:18px;font-size:17px;background:#fff;border-radius:16px;padding:12px 16px}
+#fsBtn{display:none!important}
+
+#warn{position:fixed;inset:0;z-index:1000;background:rgba(20,14,12,.72);display:none;align-items:center;justify-content:center;padding:20px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+#warn.on{display:flex}
+#warn .wcard{background:#fff;border-radius:24px;max-width:620px;width:100%;padding:30px 32px 26px;box-shadow:0 30px 80px rgba(0,0,0,.35);border-top:8px solid #D0442F;font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#1B231E;animation:pop .3s ease}
+#warn .wt{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:800;color:#B3341F;margin-bottom:12px}
+#warn .wt svg{width:34px;height:34px;flex:none}
+#warn p{font-size:19px;line-height:1.55;margin-bottom:16px}
+#warn .wc{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+#warn .wc span{background:#FBE7E3;color:#8A2A1A;border-radius:999px;padding:6px 14px;font-size:15px;font-weight:600}
+#warn button{width:100%;height:54px;border-radius:999px;background:#1B231E;color:#fff;font:700 17px -apple-system,"Segoe UI",Roboto,Arial,sans-serif;cursor:pointer;border:0}
+#warn button:hover{background:#2E3A33}
+/* teacher review */
+#rvBar{position:fixed;left:0;right:0;top:0;height:64px;z-index:900;background:#1B231E;color:#fff;display:flex;align-items:center;gap:12px;padding:0 16px;font:500 14px/1.3 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+#rvBar .rvt{background:#F0C35A;color:#1B231E;font-weight:800;letter-spacing:.06em;border-radius:999px;padding:5px 11px;font-size:12px}
+#rvBar .rvn{font-size:17px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:280px}
+#rvBar .rvs{display:flex;gap:8px;flex-wrap:wrap;flex:1;min-width:0;overflow:hidden;height:30px}
+#rvBar .rvs span{background:rgba(255,255,255,.1);border-radius:999px;padding:6px 12px;white-space:nowrap}
+#rvBar .rvs span.bad{background:#D0442F}
+#rvBar button{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:10px;height:36px;padding:0 12px;font:600 14px -apple-system,"Segoe UI",Roboto,Arial,sans-serif;cursor:pointer;white-space:nowrap}
+#rvBar button:hover{background:rgba(255,255,255,.26)}
+#rvList{position:fixed;inset:64px 0 0 0;z-index:950;background:rgba(236,234,228,.97);overflow:auto;display:none;padding:22px 16px 40px;font:15px/1.35 -apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#1B231E}
+#rvList.on{display:block}
+#rvList .in{max-width:1100px;margin:0 auto}
+#rvList h2{font-size:26px;font-weight:800;margin:0 0 4px}
+#rvList .note{color:#5E655F;margin-bottom:14px}
+#rvList input{width:100%;max-width:360px;height:42px;border-radius:12px;border:1px solid #D8D6CF;padding:0 14px;font-size:15px;margin-bottom:12px}
+#rvList table{width:100%;border-collapse:separate;border-spacing:0 6px}
+#rvList th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5E655F;padding:0 12px}
+#rvList td{background:#fff;padding:11px 12px;white-space:nowrap}
+#rvList td:first-child{border-radius:12px 0 0 12px;font-weight:600;white-space:normal}
+#rvList td:last-child{border-radius:0 12px 12px 0}
+#rvList tr.row{cursor:pointer}
+#rvList tr.row:hover td{background:#FBEFC9}
+#rvList .pill{border-radius:999px;padding:3px 10px;font-weight:600;font-size:13px}
+#rvList .ok{background:#E1EFE3;color:#2F6B3E}#rvList .no{background:#F2F2EF;color:#5E655F}#rvList .bad{background:#FBE7E3;color:#8A2A1A}
+#rvLog{position:fixed;right:16px;top:74px;z-index:950;background:#fff;border-radius:16px;box-shadow:0 14px 40px rgba(0,0,0,.25);padding:16px 18px;max-width:420px;max-height:60vh;overflow:auto;display:none;font:14px/1.5 -apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#1B231E;white-space:pre-line}
+#rvLog.on{display:block}
+#rvLog b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5E655F;margin-bottom:6px}
 /* robust centring (same method as the deck) */
 #viewport{display:block!important;overflow:hidden}
 #stage{position:absolute!important;left:50%;top:50%;flex:none;transform-origin:center center}
@@ -1151,6 +1190,7 @@ function srlPhase(i){const p=PHASE(i),top=document.querySelector('.top');let el=
 /* Paste the Web App URL from Google Apps Script between the quotes: */
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwj_tJ22nSyE_RQXnuJuFMvno-d7CRHrnxwFaB5EReAUK_j-Sf1yHyjOs0ftAe68bWJ/exec";
 const CLASS_LIST = ["Dr. Nguyet Huong", "Nguyễn Phương Anh", "Đào Nguyễn Phương Anh", "Nguyễn Thị Ngọc Anh (26045018)", "Phạm Nguyễn Quỳnh Anh", "Lê Xuân Bách", "Ngô Phương Dung", "Nguyễn Ngọc Thuỳ Dương", "Hà Vũ Quỳnh Anh", "Nguyễn Thị Xuân Diệp", "Phùng Thị Ngọc Ánh", "Lê Thị Châu", "Trần Lan Anh", "Nguyễn Thành Đạt", "Đặng Hà Anh", "Bành Thị Giang", "Chu Thuý Hồng Anh", "Hoàng Thị Chung Anh", "Trần Mỹ Duyên", "Phạm Phương Anh", "Trần Thị Anh", "Nguyễn Phương Dung", "Lê Ngọc Anh", "Phạm Việt Anh", "Nguyễn Thị Bình", "Nguyễn Thị Ngọc Anh (26045019)", "Phạm Hồng Anh", "Trần Thị Ngọc Bích", "Nguyễn Thị Bích", "Nguyễn Thị Lan Anh", "Mai Minh Anh", "Nguyễn Thị Mai Anh", "Ngô Tiến Đạt", "Lê Thị Bảo Châu", "Tạ Quỳnh Anh", "Nguyễn Thanh An", "Đào Quế Anh", "Nguyễn Quỳnh Anh", "Giáp Thị Ngọc Diệp", "Bùi Thị Huệ Chi", "Nguyễn Thị Trúc Anh", "Phan Hoàng Diệp", "Phan Hà Chi"];
+var REPLAYING=false, REVIEW=null, EV=[], MON=null;
 const LS=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
 const fold=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/đ/g,"d").replace(/Đ/g,"D").toLowerCase();
 const REC={name:LS("la-name")||"",id:LS("la-id")||"",started:LS("la-started")||"",answers:{},visited:new Set(),secs:0,refl:null,submitted:false,_t:null,
@@ -1165,13 +1205,14 @@ const REC={name:LS("la-name")||"",id:LS("la-id")||"",started:LS("la-started")||"
     return {session:this.id,name:this.name,started:this.started,page:(SLIDES[cur].crumb||(SLIDES[cur].title?"02 "+SLIDES[cur].title.replace("<br>"," ")+" — start":SLIDES[cur].type)),pages:this.visited.size+"/"+SLIDES.length,
       minutes:Math.round(this.secs/6)/10,focus:g.focus||"",target:g.score||"",when:g.when||"",route:g.route||"",confidence:SRL.conf||"",
       ...q,score:this.answered()?this.score():"",rScore:r.score||"",reached:r.reach||"",mistakes:(r.why||[]).join(", "),nextTime:r.next||"",
-      submitted:this.submitted?"yes":"",device:navigator.userAgent.slice(0,120)}; },
-  save(){ clearTimeout(this._t); this._t=setTimeout(()=>this.send(),1200); setMe("wait"); },
-  send(){ clearTimeout(this._t); if(!this.name) return;
+      submitted:this.submitted?"yes":"",device:navigator.userAgent.slice(0,120),pageUrl:location.href.split(/[?#]/)[0],
+      outCount:MON?MON.count:0,outSecs:MON?MON.total():0,outLog:MON?MON.text():"",events:JSON.stringify(EV)}; },
+  save(){ if(REPLAYING||REVIEW) return; clearTimeout(this._t); this._t=setTimeout(()=>this.send(),1200); setMe("wait"); },
+  send(){ clearTimeout(this._t); if(!this.name||REPLAYING||REVIEW) return;
     if(!/^https:\/\/script\.google(usercontent)?\.com\//.test(SCRIPT_URL)){ setMe("off"); return; }
     try{ fetch(SCRIPT_URL,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(this.payload())})
       .then(()=>setMe("sent")).catch(()=>setMe("off")); }catch(e){ setMe("off"); } },
-  submit(){ this.submitted=true; this.send(); SFX.win(); go(SLIDES.length-1); }
+  submit(){ this.submitted=true; LS("la-sub-"+this.id,"1"); if(MON) MON.stop(); this.send(); SFX.win(); go(SLIDES.length-1); }
 };
 function setMe(st){ const m=document.getElementById("me"); if(!m) return; let c=0; try{ c=cur; }catch(e){ return; } m.classList.toggle("on",!!REC.name&&c>0);
   m.classList.toggle("sent",st==="sent"); m.classList.toggle("wait",st==="wait");
@@ -1210,14 +1251,14 @@ function buildIntro(el){
     list.querySelectorAll(".nl").forEach(b=>b.onclick=()=>choose(b.dataset.n));
     const c=list.querySelector(".hi"); if(c) c.scrollIntoView({block:"nearest"}); }
   function choose(n){ if(!n) return; const fresh=n!==REC.name; REC.name=n; LS("la-name",n);
-    if(fresh||!REC.id){ REC.id=Date.now().toString(36)+Math.random().toString(36).slice(2,7); REC.started=new Date().toISOString(); LS("la-id",REC.id); LS("la-started",REC.started); }
+    if(fresh||!REC.id){ REC.id=Date.now().toString(36)+Math.random().toString(36).slice(2,7); REC.started=new Date().toISOString(); LS("la-id",REC.id); LS("la-started",REC.started); EV.length=0; if(MON) MON.reset(); }
     SFX.ting(); btn.disabled=false; btn.innerHTML=`Start as <b>${n.replace(/\s*\(\d+\)$/,"")}</b> →`; draw(); }
   inp.addEventListener("input",()=>{hi=0;draw()});
   inp.addEventListener("keydown",e=>{ e.stopPropagation();
     if(e.key==="ArrowDown"){e.preventDefault();hi=Math.min(shown.length-1,hi+1);draw()}
     else if(e.key==="ArrowUp"){e.preventDefault();hi=Math.max(0,hi-1);draw()}
     else if(e.key==="Enter"){ if(shown[hi]) choose(shown[hi]); else { const a=list.querySelector(".add"); if(a) choose(a.dataset.n); } } });
-  btn.onclick=()=>{ if(!REC.name) return; REC.save(); go(1); };
+  btn.onclick=()=>{ if(!REC.name) return; if(MON) MON.start(); REC.save(); go(1); };
   if(REC.name){ btn.disabled=false; btn.innerHTML=`Continue as <b>${REC.name.replace(/\s*\(\d+\)$/,"")}</b> →`; }
   draw(); el._focus=()=>setTimeout(()=>{ if(matchMedia("(pointer:fine)").matches) inp.focus(); },400);
 }
@@ -1271,7 +1312,6 @@ document.addEventListener("keydown",e=>{ if(e.target&&e.target.closest&&e.target
   if(e.key==="ArrowRight"||e.key==="PageDown") go(cur+1);
   else if(e.key==="ArrowLeft"||e.key==="PageUp") go(cur-1);
   else if(e.key==="t"||e.key==="T"){ if(trBtn.style.display!=="none") trBtn.click(); }
-  else if(e.key==="f"||e.key==="F") fs();
   else if(e.key==="m"||e.key==="M") sndBtn.click();
   else if(e.key==="Escape"){ drawer.classList.remove("open"); trBtn.classList.remove("on"); }
 });
@@ -1282,10 +1322,101 @@ spdBtn.onclick=()=>{ speed=SPEEDS[(SPEEDS.indexOf(speed)+1)%SPEEDS.length]; spdB
 function fs(){ if(!document.fullscreenElement) document.documentElement.requestFullscreen?.(); else document.exitFullscreen?.(); }
 document.getElementById("fsBtn").onclick=fs;
 
-function fit(){ const s=Math.min(window.innerWidth/1280, window.innerHeight/720)*0.98; document.getElementById("stage").style.transform=`translate(-50%,-50%) scale(${s})`; }
+function fit(){ const top=REVIEW?64:0; const s=Math.min(window.innerWidth/1280, (window.innerHeight-top)/720)*0.98; document.getElementById("stage").style.top=`calc(50% + ${top/2}px)`; document.getElementById("stage").style.transform=`translate(-50%,-50%) scale(${s})`; }
 window.addEventListener("resize",fit); fit();
 let start=0;
 els.forEach(e=>e.classList.remove("active")); go(Math.min(start,els.length-1));
+
+/* ================= full-screen monitoring ================= */
+const WARN_TEXT = "Con cần làm bài ở chế độ toàn màn hình. Số lần con thoát khỏi giao diện bài làm đã được gửi đến thầy Độ. Bất kỳ hành vi gian lận nào cũng sẽ bị thầy xử lý.";
+document.body.insertAdjacentHTML("beforeend",`<div id="warn" role="alertdialog" aria-modal="true"><div class="wcard">
+  <div class="wt"><svg viewBox="0 0 24 24" fill="none" stroke="#B3341F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5"/><circle cx="12" cy="18" r=".6" fill="#B3341F"/></svg>Cảnh báo</div>
+  <p>${WARN_TEXT}</p><div class="wc"><span id="wCount"></span><span id="wTime"></span></div>
+  <button id="wBack">Quay lại làm bài (toàn màn hình)</button></div></div>`);
+MON={on:false,count:0,secs:0,log:[],since:0,why:"",
+  fsOK:!!(document.documentElement.requestFullscreen||document.documentElement.webkitRequestFullscreen),
+  key(k){ return "la-"+k+"-"+REC.id; },
+  load(){ try{ const d=JSON.parse(LS(this.key("mon"))||"null"); if(d){ this.count=d.count; this.secs=d.secs; this.log=d.log; } }catch(e){} },
+  persist(){ LS(this.key("mon"),JSON.stringify({count:this.count,secs:this.secs,log:this.log})); },
+  reset(){ this.count=0; this.secs=0; this.log=[]; this.since=0; },
+  isFS(){ return !!(document.fullscreenElement||document.webkitFullscreenElement); },
+  enter(){ const d=document.documentElement; try{ const r=(d.requestFullscreen||d.webkitRequestFullscreen).call(d); if(r&&r.catch) r.catch(()=>{}); }catch(e){} },
+  total(){ return this.secs+(this.since?Math.round((Date.now()-this.since)/1000):0); },
+  text(){ return this.log.map((x,i)=>`${i+1}) ${x.at} · ${x.s==null?"still out":x.s+"s"} · ${x.why}`).join("\n"); },
+  start(){ if(REVIEW||LS("la-sub-"+REC.id)) return; this.on=true; LS(this.key("on"),"1");
+    const t=+LS(this.key("left")); if(t){ const s=Math.max(1,Math.round((Date.now()-t)/1000)); this.secs+=s; const last=this.log[this.log.length-1];
+      if(last&&last.s==null){ last.s=s; last.why="closed or reloaded the page"; }
+      else { this.count++; this.log.push({at:new Date(t).toLocaleTimeString("en-GB"),s,why:"closed or reloaded the page"}); }
+      LS(this.key("left"),""); this.persist(); }
+    if(this.fsOK) this.enter(); REC.send(); },
+  stop(){ this.on=false; LS(this.key("on"),""); this.since=0; hideWarn(); try{ if(this.isFS()) (document.exitFullscreen||document.webkitExitFullscreen).call(document); }catch(e){} },
+  out(why){ if(!this.on||this.since) return; this.since=Date.now(); this.why=why; this.count++;
+    this.log.push({at:new Date(this.since).toLocaleTimeString("en-GB"),s:null,why}); this.persist(); REC.send(); },
+  back(){ if(!this.since) return; const s=Math.max(1,Math.round((Date.now()-this.since)/1000)); this.secs+=s; this.log[this.log.length-1].s=s;
+    this.since=0; this.persist(); REC.send(); }
+};
+function showWarn(){ if(!MON.on) return; document.getElementById("wCount").textContent="Đã thoát: "+MON.count+" lần";
+  document.getElementById("wTime").textContent="Tổng thời gian ở ngoài: "+MON.total()+" giây"; document.getElementById("warn").classList.add("on"); }
+function hideWarn(){ document.getElementById("warn").classList.remove("on"); }
+document.getElementById("wBack").onclick=()=>{ if(MON.fsOK&&!MON.isFS()){ MON.enter(); setTimeout(()=>{ if(!MON.isFS()){ MON.back(); hideWarn(); } },900); } else { MON.back(); hideWarn(); } };
+["fullscreenchange","webkitfullscreenchange"].forEach(ev=>document.addEventListener(ev,()=>{ if(!MON.on) return;
+  if(!MON.isFS()){ MON.out("exited full screen"); showWarn(); } else if(!document.hidden){ MON.back(); hideWarn(); } }));
+document.addEventListener("visibilitychange",()=>{ if(!MON.on) return;
+  if(document.hidden) MON.out("switched tab / app"); else { if(MON.isFS()||!MON.fsOK) MON.back(); showWarn(); } });
+addEventListener("blur",()=>{ if(MON.on) MON.out("left the window"); });
+addEventListener("focus",()=>{ if(!MON.on||!MON.since) return; if(MON.isFS()||!MON.fsOK) MON.back(); showWarn(); });
+addEventListener("pagehide",()=>{ if(MON.on){ LS(MON.key("left"),String(MON.since||Date.now())); MON.persist(); REC.send(); } });
+
+/* ================= click log (to rebuild a student's screen) ================= */
+const pathOf=(el,root)=>{ const p=[]; while(el&&el!==root){ const par=el.parentElement; if(!par) return null; p.unshift([...par.children].indexOf(el)); el=par; } return el===root?p.join("."):null; };
+const nodeAt=(root,path)=>{ let el=root; for(const i of String(path).split(".")){ if(!el) return null; el=el.children[+i]; } return el; };
+document.addEventListener("click",e=>{ if(REPLAYING||REVIEW||cur===0||!REC.name) return; const t=e.target;
+  if(!t.closest||t.closest(".clip,.trk,.qtag")) return; const sl=t.closest("#slides > .slide"); if(!sl||sl!==els[cur]) return;
+  const path=pathOf(t,sl); if(path==null||EV.length>1600) return; EV.push([cur,path,e.shiftKey?1:0]); LS("la-ev-"+REC.id,JSON.stringify(EV)); },true);
+function replay(list){ REPLAYING=true; const snd=sfxOn; sfxOn=false;
+  for(const [p,path,sh] of list){ if(p!==cur) go(p); const el=nodeAt(els[p],path); if(el) el.dispatchEvent(new MouseEvent("click",{bubbles:true,cancelable:true,shiftKey:!!sh})); }
+  sfxOn=snd; REPLAYING=false; }
+
+/* restore own work after a reload */
+if(!new URLSearchParams(location.search).has("teacher")&&REC.id){
+  try{ const saved=JSON.parse(LS("la-ev-"+REC.id)||"[]"); if(saved.length){ replay(saved); EV.push(...saved); } }catch(e){}
+  MON.load(); if(LS("la-sub-"+REC.id)) REC.submitted=true; go(0); }
+
+/* ================= teacher review: index.html?teacher=KEY ================= */
+(function(){ const qs=new URLSearchParams(location.search), key=qs.get("teacher"); if(key===null) return;
+  REVIEW={key}; try{ hideWarn(); }catch(e){}
+  document.body.insertAdjacentHTML("beforeend",`<div id="rvBar"><span class="rvt">TEACHER REVIEW</span><span class="rvn" id="rvName">Students</span><div class="rvs" id="rvStats"></div>
+    <button id="rvLogBtn" style="display:none">Out log</button><button id="rvListBtn">All students</button></div><div id="rvList"><div class="in" id="rvIn">Loading…</div></div><div id="rvLog"></div>`);
+  fit();
+  const api=q=>fetch(SCRIPT_URL+"?key="+encodeURIComponent(key)+"&"+q).then(r=>r.json());
+  const list=document.getElementById("rvList"), inEl=document.getElementById("rvIn"), logEl=document.getElementById("rvLog");
+  const fmtS=s=>{ s=+s||0; return s<60?s+"s":Math.floor(s/60)+"m "+(s%60)+"s"; };
+  document.getElementById("rvListBtn").onclick=()=>{ list.classList.toggle("on"); logEl.classList.remove("on"); };
+  document.getElementById("rvLogBtn").onclick=()=>logEl.classList.toggle("on");
+  function showList(){ list.classList.add("on");
+    api("list=1").then(rows=>{ if(rows.error){ inEl.innerHTML=`<h2>Cannot open</h2><p class="note">${rows.error}</p>`; return; }
+      inEl.innerHTML=`<h2>Student work</h2><div class="note">${rows.length} attempt(s). Click a row to see that student's screen. Newest first.</div><input id="rvQ" placeholder="Search name…">
+      <table><thead><tr><th>Name</th><th>Submitted</th><th>Score</th><th>Target</th><th>Out of full screen</th><th>Time out</th><th>Now on</th><th>Last update</th></tr></thead><tbody>${rows.map(r=>`
+      <tr class="row" data-s="${r.session}" data-n="${fold(String(r.name))}"><td>${r.name}</td><td><span class="pill ${r.submitted==="yes"?"ok":"no"}">${r.submitted==="yes"?"yes":"not yet"}</span></td>
+      <td>${r.score===""?"–":r.score+"/10"}</td><td>${r.target||"–"}</td><td><span class="pill ${+r.outCount?"bad":"ok"}">${+r.outCount||0}×</span></td><td>${fmtS(r.outSecs)}</td>
+      <td style="max-width:240px;overflow:hidden;text-overflow:ellipsis">${r.page||""}</td><td>${r.updated?new Date(r.updated).toLocaleTimeString("en-GB"):""}</td></tr>`).join("")}</tbody></table>`;
+      inEl.querySelectorAll("tr.row").forEach(tr=>tr.onclick=()=>{ location.search="?teacher="+encodeURIComponent(key)+"&s="+tr.dataset.s; });
+      const q=inEl.querySelector("#rvQ"); q.oninput=()=>{ const f=fold(q.value); inEl.querySelectorAll("tr.row").forEach(tr=>tr.style.display=tr.dataset.n.includes(f)?"":"none"); };
+    }).catch(err=>{ inEl.innerHTML=`<h2>Cannot load the sheet</h2><p class="note">Check that the Apps Script is deployed as a new version with access “Anyone”. (${err})</p>`; }); }
+  const sid=qs.get("s");
+  if(!sid){ showList(); return; }
+  api("session="+encodeURIComponent(sid)).then(d=>{ if(d.error){ showList(); return; }
+    REC.name=d.name; REC.id=d.session; let evs=[]; try{ evs=JSON.parse(d.events||"[]"); }catch(e){}
+    replay(evs); REC.submitted=d.submitted==="yes";
+    document.getElementById("rvName").textContent=d.name;
+    document.getElementById("rvStats").innerHTML=[`Score <b>${d.score===""?"–":d.score+"/10"}</b>`,`Target <b>${d.target||"–"}</b>`,
+      `<span class="${+d.outCount?"bad":""}" style="padding:0;background:none">Out of full screen <b>${+d.outCount||0}×</b> · ${fmtS(d.outSecs)}</span>`,
+      d.submitted==="yes"?"Submitted":"Not submitted",`${d.minutes||0} min`].map(x=>`<span>${x}</span>`).join("");
+    const lb=document.getElementById("rvLogBtn"); lb.style.display=""; logEl.innerHTML=`<b>Out of full screen · ${+d.outCount||0} time(s)</b>${d.outLog||"No exits."}`;
+    go(1);
+  }).catch(()=>showList());
+})();
+
 </script>
 </body>
 </html>
